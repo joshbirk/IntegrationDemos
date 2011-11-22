@@ -1,0 +1,8 @@
+﻿username=YOURUSERNAME
+password=YOURPASSWORD
+api=23.0
+consumerkey=YOURCONSUMERKEY
+privatekey=YOURPRIVATEKEY
+merchandise_name=
+merchandise_price=
+merchandise_inventory=
