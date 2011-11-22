@@ -12,25 +12,27 @@ namespace AddMerchandise
     {
         private const string oauthendpoint = "/services/oauth2/token";
         private const string oauthoptions = "grant_type=password";
-
-        public string token;
-        public string instance_url;
-        public Dictionary<string, string> properties;
+        private string token;
+        private string instance_url;
+        private Dictionary<string, string> properties;
 
         static void Main(string[] args)
         {
+            AddMerchandise app = new AddMerchandise();
+            if(app.login()) {
+                app.insertItem();
+            }
+        }
+
+        public AddMerchandise() {
             properties = new Dictionary<string, string>();
             foreach (String row in File.ReadAllLines("AddMerchandise.txt"))
             {
                 properties.Add(row.Split('=')[0], row.Split('=')[1]);
             }
 
-            if(login()) {
-                insertItem();
-            }
         }
 
-       
         public Boolean login()
         {
             Console.Write("Logging in: "+properties["username"]+", "+properties["login_url"]);
@@ -50,11 +52,9 @@ namespace AddMerchandise
 
                 return true;
                 } catch (System.Exception error) {
-                Console.Write(error);
-                Console.Write("\n\nError logging in.  Please check that buyerapp.txt has proper credentials.\n"); 
-                    
-                
-                return false;      
+                    Console.Write(error);
+                    Console.Write("\n\nError logging in.  Please check that the properties file has proper credentials.\n"); 
+                    return false;      
                 }
         }
 
@@ -65,7 +65,7 @@ namespace AddMerchandise
               postData += ", \"Price__c\" : " + properties["merchandise_price"];
             }
             if(properties["merchandise_inventory"] != "") {
-              postData += ", \"Inventory__c\" : " + properties["merchandise_inventory"];
+              postData += ", \"Total_Inventory__c\" : " + properties["merchandise_inventory"];
             }
             postData += "}";
             
