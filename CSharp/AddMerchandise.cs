@@ -19,20 +19,18 @@ namespace AddMerchandise
 
         static void Main(string[] args)
         {
-            AddMerchandise app = new AddMerchandise();
-            if(app.login()) {
-                app.insertItem();
-            }
-        }
-
-        public AddMerchandise() {
             properties = new Dictionary<string, string>();
             foreach (String row in File.ReadAllLines("AddMerchandise.txt"))
             {
                 properties.Add(row.Split('=')[0], row.Split('=')[1]);
             }
+
+            if(login()) {
+                insertItem();
+            }
         }
 
+       
         public Boolean login()
         {
             Console.Write("Logging in: "+properties["username"]+", "+properties["login_url"]);
