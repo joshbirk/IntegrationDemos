@@ -32,7 +32,7 @@ namespace AddMerchandise
             }
 
         }
-
+/*
         public Boolean login()
         {
             Console.Write("Logging in: "+properties["username"]+", "+properties["login_url"]);
@@ -57,7 +57,9 @@ namespace AddMerchandise
                     return false;      
                 }
         }
+*/
 
+/*
         public void insertItem()
         {
             string postData = "{\"Name\" : \"" + properties["merchandise_name"] + "\"";
@@ -80,6 +82,7 @@ namespace AddMerchandise
             
             Console.Write(responseFromServer);
         }
+*/
 
         public string doHTTPRequest(string endpoint, string postData, string token, Boolean isJSON)
         {
