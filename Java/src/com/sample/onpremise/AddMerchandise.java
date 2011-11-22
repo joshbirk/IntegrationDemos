@@ -61,7 +61,7 @@ public class AddMerchandise {
             }
 		}
 		
-		private static ForceLogin login2ForceDotCom(String uName, 
+/*		private static ForceLogin login2ForceDotCom(String uName, 
 												String pwd,
 												String id,
 												String secret,											
@@ -96,9 +96,9 @@ public class AddMerchandise {
     	    	e.printStackTrace();
     	    }	
 			return null;
-		}
+		} */
 		
-		public static String addMerchandise(ForceLogin login,
+/*		public static String addMerchandise(ForceLogin login,
 											String name,
 											String price,
 											String desc,
@@ -144,7 +144,7 @@ public class AddMerchandise {
 			}
  		
 			return null;
-		}
+		} */
 		
 		public class ForceLogin {
 			private String instanceUrl;
