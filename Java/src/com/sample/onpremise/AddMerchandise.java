@@ -28,7 +28,7 @@ public class AddMerchandise {
 	            String passsword = props.getProperty("password");
 	            
 	            if (username == null || username.trim().equals("") || 
-	            	passsword == null || passsword.trim().equals("")){
+	            	password == null || password.trim().equals("")){
 	            	throw new IllegalArgumentException("Please provide a username and password in the properties file");
 	            }
 
@@ -46,7 +46,7 @@ public class AddMerchandise {
 	            String desc = props.getProperty("merchandise.description");
 	            String inventory = props.getProperty("merchandise.inventory");
 	            
-	            ForceLogin login = login2ForceDotCom(username, passsword, 
+	            ForceLogin login = login2ForceDotCom(username, password, 
 	            				    				 clientId, clientSecret, 
 	            									 loginURL);
 	            if (login != null){	
