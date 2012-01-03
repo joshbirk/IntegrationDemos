@@ -25,7 +25,7 @@ public class AddMerchandise {
 	            props.load(new FileInputStream("AddMerchandise.properties"));
 
 	            String username = props.getProperty("username");
-	            String passsword = props.getProperty("password");
+	            String password = props.getProperty("password");
 	            
 	            if (username == null || username.trim().equals("") || 
 	            	password == null || password.trim().equals("")){
