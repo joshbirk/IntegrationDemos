@@ -25,10 +25,10 @@ public class AddMerchandise {
 	            props.load(new FileInputStream("AddMerchandise.properties"));
 
 	            String username = props.getProperty("username");
-	            String passsword = props.getProperty("password");
+	            String password = props.getProperty("password");
 	            
 	            if (username == null || username.trim().equals("") || 
-	            	passsword == null || passsword.trim().equals("")){
+	            	password == null || password.trim().equals("")){
 	            	throw new IllegalArgumentException("Please provide a username and password in the properties file");
 	            }
 
@@ -46,7 +46,7 @@ public class AddMerchandise {
 	            String desc = props.getProperty("merchandise.description");
 	            String inventory = props.getProperty("merchandise.inventory");
 	            
-	            ForceLogin login = login2ForceDotCom(username, passsword, 
+	            ForceLogin login = login2ForceDotCom(username, password, 
 	            				    				 clientId, clientSecret, 
 	            									 loginURL);
 	            if (login != null){	
@@ -61,7 +61,7 @@ public class AddMerchandise {
             }
 		}
 		
-		private static ForceLogin login2ForceDotCom(String uName, 
+/*		private static ForceLogin login2ForceDotCom(String uName, 
 												String pwd,
 												String id,
 												String secret,											
@@ -96,9 +96,9 @@ public class AddMerchandise {
     	    	e.printStackTrace();
     	    }	
 			return null;
-		}
+		} */
 		
-		public static String addMerchandise(ForceLogin login,
+/*		public static String addMerchandise(ForceLogin login,
 											String name,
 											String price,
 											String desc,
@@ -144,7 +144,7 @@ public class AddMerchandise {
 			}
  		
 			return null;
-		}
+		} */
 		
 		public class ForceLogin {
 			private String instanceUrl;
