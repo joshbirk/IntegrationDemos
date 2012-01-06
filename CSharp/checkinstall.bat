@@ -1,3 +1,4 @@
+@ECHO OFF
 ECHO Checking for csc.exe compiler.
 
 IF EXIST C:\windows\microsoft.net\Framework\v4.0.30319\csc.exe (

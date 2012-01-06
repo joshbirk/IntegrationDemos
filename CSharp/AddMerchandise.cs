@@ -35,11 +35,11 @@ namespace AddMerchandise
 /*
         public Boolean login()
         {
-            Console.Write("Logging in: "+properties["username"]+", "+properties["login_url"]);
+            Console.Write("Logging in: "+properties["username"]+", "+properties["login.url"]);
             
             try {
-                string login_params =  oauthoptions + "&client_id=" + properties["consumerkey"] + "&client_secret=" + properties["privatekey"] + "&username=" + properties["username"] + "&password=" + properties["password"];
-                string responseFromServer = doHTTPRequest(properties["login_url"] + oauthendpoint, login_params, "", false);
+                string login_params =  oauthoptions + "&client_id=" + properties["client.id"] + "&client_secret=" + properties["client.secret"] + "&username=" + properties["username"] + "&password=" + properties["password"];
+                string responseFromServer = doHTTPRequest(properties["login.url"] + oauthendpoint, login_params, "", false);
                 
                 string[] data = responseFromServer.Split(':');
                 token = data[7];
@@ -62,12 +62,15 @@ namespace AddMerchandise
 /*
         public void insertItem()
         {
-            string postData = "{\"Name\" : \"" + properties["merchandise_name"] + "\"";
-            if(properties["merchandise_price"] != "") {
-              postData += ", \"Price__c\" : " + properties["merchandise_price"];
+            string postData = "{\"Name\" : \"" + properties["merchandise.name"] + "\"";
+            if(properties["merchandise.price"] != "") {
+              postData += ", \"Price__c\" : " + properties["merchandise.price"];
             }
-            if(properties["merchandise_inventory"] != "") {
-              postData += ", \"Total_Inventory__c\" : " + properties["merchandise_inventory"];
+            if(properties["merchandise.inventory"] != "") {
+              postData += ", \"Total_Inventory__c\" : " + properties["merchandise.inventory"];
+            }
+            if(properties["merchandise.description"] != "") {
+              postData += ", \"Description__c\" : \"" + properties["merchandise.description"] +"\"";
             }
             postData += "}";
             

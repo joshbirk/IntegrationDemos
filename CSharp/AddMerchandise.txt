@@ -1,8 +1,10 @@
-﻿username=YOURUSERNAME
-password=YOURPASSWORD
+﻿username={USERNAME}
+password={PASSWORD}
+client.id={PUBLICKEY}
+client.secret={PRIVATEKEY}
+login.url=https://login.salesforce.com
 api=23.0
-consumerkey=YOURCONSUMERKEY
-privatekey=YOURPRIVATEKEY
-merchandise_name=
-merchandise_price=
-merchandise_inventory=
+merchandise.name=
+merchandise.price=
+merchandise.description=
+merchandise.inventory=
